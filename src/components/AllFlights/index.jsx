@@ -14,11 +14,10 @@ class AllFlights extends React.Component {
   }
 
   fetchUsersWithAxios = () => {
-
     this.setState({...this.state, isFetching: true});
-    axios.get(USER_SERVICE_URL + "/itineraries")
+    axios.get(USER_SERVICE_URL + "/getitineraries")
       .then(response => {
-        this.setState({data: response.data, isFetching: false})
+        this.setState({data: response.data.data, isFetching: false})
       })
       .catch(e => {
         console.log(e);
@@ -40,23 +39,25 @@ class AllFlights extends React.Component {
 
 
   render() {
-    let cardSet = [];
-    // let cards = this.state.data;
-    let cards =[];
-    for (let i = 0; i <= cards.length; i++) {
-      cardSet.push(<PriceCard data={cards[i]}/>);
-    }
 
-    if (!this.state.isFetching) {
+
+    if (!this.state.isFetching && this.state.data !=undefined) {
+      let cardSet = [];
+      let cards = this.state.data;
+      // let cards =[];
+
+      for (let i = 0; i < cards.length; i++) {
+        cardSet.push(<PriceCard data={cards[i]} />);
+      }
       return (
         <div>
-          <cardSet/>
+          {cardSet}
           {/*<ActivePage />*/}
         </div>)
     } else {
       return (
         <div>
-          <p>{this.state.isFetching ? 'Fetching users...' : ''}</p>
+          <p>Fetching users...</p>
         </div>)
     }
   }

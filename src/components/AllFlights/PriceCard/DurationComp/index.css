@@ -2,3 +2,10 @@
   float: right;
   text-align: right;
 }
+
+.direct_flight{
+  color: lightseagreen;
+}
+.layover_flight{
+  color:palevioletred;
+}

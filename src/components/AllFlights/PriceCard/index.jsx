@@ -7,55 +7,36 @@ import './icons.scss';
 import BpkSmallarrow from 'bpk-component-icon/sm/long-arrow-right';
 import styles from './index.css';
 import FlightCardFooter from "./FlightCardFooter";
+import FlightLegs from "./FlightLegs";
 // require('./index.scss');
 class PriceCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFetching: false,
+      users: []
+    };
+  }
+
+
   render(){
+
+    let flightLegs =[];
+    if(this.props.data.legs.length !==0){
+      {this.props.data.legs.map((leg, i) => {
+        flightLegs.push(<FlightLegs leg={leg}/>)
+      })}
+    }
+
     return (
+
+
       <BpkCard>
         <div>
           <BpkGridContainer>
-            <BpkGridRow>
-              <BpkGridColumn width={1} tabletWidth={1}>
-                <img
-                  src="www.skyscanner.fr/images/websites/220x80/h_98.png"
-                  alt="new"
-                />
-              </BpkGridColumn>
-              <BpkGridColumn width={2} tabletWidth={2} padded={false}>
-                <TimeAndPlaceComp/>
-              </BpkGridColumn>
-              <BpkGridColumn width={2} tabletWidth={2} padded={false}>
-                <div className={styles.icon__container}>    <BpkSmallarrow  /></div>
-              </BpkGridColumn>
-              <BpkGridColumn width={2} tabletWidth={2} padded={false}>
-                <TimeAndPlaceComp/>
-              </BpkGridColumn>
-              <BpkGridColumn width={8} tabletWidth={5} padded={false}>
-                <DurationComp/>
-              </BpkGridColumn>
-            </BpkGridRow>
-            <BpkGridRow>
-              <BpkGridColumn width={1} tabletWidth={1}>
-                <img
-                  src="www.skyscanner.fr/images/websites/220x80/h_98.png"
-                  alt="new"
-                />
-              </BpkGridColumn>
-              <BpkGridColumn width={2} tabletWidth={2}>
-                <TimeAndPlaceComp/>
-              </BpkGridColumn>
-              <BpkGridColumn width={2} tabletWidth={2}>
-                <div className={styles.icon__container}>    <BpkSmallarrow  /></div>
-              </BpkGridColumn>
-              <BpkGridColumn width={2} tabletWidth={2}>
-                <TimeAndPlaceComp/>
-              </BpkGridColumn>
-              <BpkGridColumn width={8} tabletWidth={5}>
-                <DurationComp/>
-              </BpkGridColumn>
-            </BpkGridRow>
+            {flightLegs}
             <BpkGridRow padded={false}>
-              <FlightCardFooter/>
+              <FlightCardFooter price={this.props.data.price} agent={this.props.data.agent}/>
             </BpkGridRow>
           </BpkGridContainer>
 
