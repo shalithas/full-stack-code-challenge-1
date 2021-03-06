@@ -3,7 +3,7 @@ import PriceCard from "./PriceCard"
 import axios from "axios";
 const USER_SERVICE_URL = "http://localhost:4000";
 
-// import "./index.css"
+import styles from "./index.css"
 class AllFlights extends React.Component {
   constructor(props) {
     super(props);
@@ -50,7 +50,7 @@ class AllFlights extends React.Component {
         cardSet.push(<PriceCard data={cards[i]} />);
       }
       return (
-        <div>
+        <div className={styles.flightCards__container}>
           {cardSet}
           {/*<ActivePage />*/}
         </div>)

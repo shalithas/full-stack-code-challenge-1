@@ -1,3 +1,10 @@
 .icon__container{
   padding: 50%;
+  color:lightgray;
+}
+.arrow__icon{
+  fill:gray;
+}
+.airline__img{
+  max-width: 30px;
 }

@@ -1,4 +1,7 @@
 .select__button{
   float:right;
-  margin-top:30%;
+  margin-top:20%;
+}
+.agent__text{
+  color: grey;
 }

@@ -52,8 +52,8 @@ class FlightContent extends React.Component {
         <div>
           <BpkGridRow>
             <BpkGridColumn width={1} tabletWidth={1}>
-              <img
-                src="www.skyscanner.fr/images/websites/220x80/h_98.png"
+              <img className={styles.airline__img}
+                src={`https://logos.skyscnr.com/images/airlines/favicon/${this.state.data.airline_id}.png`}
                 alt="new"
               />
             </BpkGridColumn>
@@ -61,7 +61,7 @@ class FlightContent extends React.Component {
               <TimeAndPlaceComp time={this.state.data.departure_time} airport={this.state.data.departure_airport} />
             </BpkGridColumn>
             <BpkGridColumn width={2} tabletWidth={2} padded={false}>
-              <div className={styles.icon__container}>    <BpkSmallarrow  /></div>
+              <div className={styles.icon__container}>    <BpkSmallarrow className={styles.arrow__icon} /></div>
             </BpkGridColumn>
             <BpkGridColumn width={2} tabletWidth={2} padded={false}>
               <TimeAndPlaceComp time={this.state.data.arrival_time} airport={this.state.data.arrival_airport} />

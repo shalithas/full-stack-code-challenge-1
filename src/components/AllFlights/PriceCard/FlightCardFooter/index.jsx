@@ -11,9 +11,9 @@ class FlightCardFooter extends React.Component {
       <div>
         <BpkGridColumn width={7} tabletWidth={7} padded={false}>
           <BpkGridRow>
-            <BpkGridColumn width={12} >
+            <BpkGridColumn width={12} padded={false} >
               <BpkText tagName="h1" textStyle="xxl">{this.props.price}</BpkText>
-              <BpkText tagName="p" textStyle="lg">{this.props.agent}</BpkText>
+              <BpkText tagName="p" textStyle="base" className={styles.agent__text}>{this.props.agent}</BpkText>
             </BpkGridColumn>
           </BpkGridRow>
         </BpkGridColumn>

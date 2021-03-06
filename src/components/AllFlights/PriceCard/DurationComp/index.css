@@ -2,7 +2,9 @@
   float: right;
   text-align: right;
 }
-
+.duration__text{
+  color: grey;
+}
 .direct_flight{
   color: lightseagreen;
 }

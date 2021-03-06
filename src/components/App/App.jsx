@@ -3,7 +3,7 @@ import BpkText from 'bpk-component-text';
 
 import Header from '../Header';
 
-import STYLES from './App.scss';
+import STYLES from './App.css';
 import AllFlights from "../AllFlights";
 
 const getClassName = (className) => STYLES[className] || 'UNKNOWN';

@@ -13,8 +13,7 @@ class PriceCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isFetching: false,
-      users: []
+      isFetching: false
     };
   }
 
@@ -29,19 +28,13 @@ class PriceCard extends React.Component {
     }
 
     return (
-
-
-      <BpkCard>
-        <div>
+      <BpkCard padded={true} className={styles.price_card__card}>
           <BpkGridContainer>
             {flightLegs}
             <BpkGridRow padded={false}>
               <FlightCardFooter price={this.props.data.price} agent={this.props.data.agent}/>
             </BpkGridRow>
           </BpkGridContainer>
-
-        </div>
-
       </BpkCard>)
   }
 }

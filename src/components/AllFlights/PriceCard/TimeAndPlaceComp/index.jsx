@@ -12,12 +12,9 @@ class TimeAndPlaceComp extends React.Component {
   render() {
     return (
       <div>
-          <BpkGridColumn className={styles.time_and_place_card} width={12} tabletWidth={12} >
-            <BpkText tagName="p" textStyle="lg">
-              <Moment format="HH:MM">
-              {this.props.time}
-            </Moment></BpkText>
-            <BpkText tagName="p" >{this.props.airport}</BpkText>
+          <BpkGridColumn className={styles.time_and_place__card} width={12} tabletWidth={12} >
+            <BpkText tagName="p"><Moment format="HH:MM">{this.props.time}</Moment></BpkText>
+            <BpkText tagName="p" className={styles.airport__text} >{this.props.airport}</BpkText>
           </BpkGridColumn>
       </div>
   )
