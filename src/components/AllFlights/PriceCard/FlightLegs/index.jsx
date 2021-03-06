@@ -41,7 +41,6 @@ class FlightContent extends React.Component {
 
   componentDidMount() {
     this.fetchLegs();
-    this.timer = setInterval(() => this.fetchLegs(), 5000);
   }
 
   render() {

@@ -35,7 +35,6 @@ class AllFlights extends React.Component {
 
   componentDidMount() {
     this.fetchItineraries();
-    this.timer = setInterval(() => this.fetchItineraries(), 5000);
   }
 
   render() {
