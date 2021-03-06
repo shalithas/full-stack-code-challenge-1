@@ -1,19 +1,20 @@
 import React from 'react';
 import PriceCard from "./PriceCard"
 import axios from "axios";
+
 const USER_SERVICE_URL = "http://localhost:4000";
 
 import styles from "./index.css"
+
 class AllFlights extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isFetching: false,
-      users: []
+      isFetching: false
     };
   }
 
-  fetchUsersWithAxios = () => {
+  fetchItinerariesWithAxios = () => {
     this.setState({...this.state, isFetching: true});
     axios.get(USER_SERVICE_URL + "/getitineraries")
       .then(response => {
@@ -24,7 +25,7 @@ class AllFlights extends React.Component {
         this.setState({...this.state, isFetching: false});
       });
   };
-  fetchUsers = this.fetchUsersWithAxios
+  fetchItineraries = this.fetchItinerariesWithAxios
 
 
   componentWillUnmount() {
@@ -33,26 +34,21 @@ class AllFlights extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchUsers();
-    // this.timer = setInterval(() => this.fetchUsers(), 5000);
+    this.fetchItineraries();
+    this.timer = setInterval(() => this.fetchItineraries(), 5000);
   }
-
 
   render() {
 
-
-    if (!this.state.isFetching && this.state.data !=undefined) {
+    if (!this.state.isFetching && this.state.data != undefined) {
       let cardSet = [];
       let cards = this.state.data;
-      // let cards =[];
-
       for (let i = 0; i < cards.length; i++) {
-        cardSet.push(<PriceCard data={cards[i]} />);
+        cardSet.push(<PriceCard data={cards[i]}/>);
       }
       return (
         <div className={styles.flightCards__container}>
           {cardSet}
-          {/*<ActivePage />*/}
         </div>)
     } else {
       return (
@@ -61,11 +57,6 @@ class AllFlights extends React.Component {
         </div>)
     }
   }
-
-
-  /*<div className={"number-rate-comp--div"}>*/
-
-
 }
 
 export default AllFlights;

@@ -1,14 +1,10 @@
 import React from 'react';
-import TimeAndPlaceComp from "./TimeAndPlaceComp"
-import DurationComp from "./DurationComp"
 import BpkCard from 'bpk-component-card';
-import {BpkGridColumn, BpkGridContainer, BpkGridRow} from "bpk-component-grid";
+import { BpkGridContainer, BpkGridRow} from "bpk-component-grid";
 import './icons.scss';
-import BpkSmallarrow from 'bpk-component-icon/sm/long-arrow-right';
 import styles from './index.css';
 import FlightCardFooter from "./FlightCardFooter";
 import FlightLegs from "./FlightLegs";
-// require('./index.scss');
 class PriceCard extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +12,6 @@ class PriceCard extends React.Component {
       isFetching: false
     };
   }
-
 
   render(){
 
@@ -39,6 +34,4 @@ class PriceCard extends React.Component {
   }
 }
 
-// export default connect(null, actions)((PriceCardContent))
-// export default connect(PriceCard);
 export default PriceCard;
