@@ -41,6 +41,17 @@ export const ItineraryLeg = ({ id }) => {
                             direction="column"
                             justify="center"
                             alignItems="center"
+                            xs='2'
+                        >
+                        <div style={{width: '30px'}}>
+                            <img src={`https://logos.skyscnr.com/images/airlines/favicon/${itineraryLegData.airline_id}.png`} width="100%"/>
+                        </div>
+                        </Grid>
+                        <Grid
+                            item
+                            direction="column"
+                            justify="center"
+                            alignItems="center"
                             xs='4'
                         >
                             <Typography>{moment(itineraryLegData.departure_time).format('HH:mm')}</Typography>
@@ -51,7 +62,7 @@ export const ItineraryLeg = ({ id }) => {
                             direction="row"
                             justify="center"
                             alignItems="center"
-                            xs='4'
+                            xs='2'
                         >
                             <ArrowForwardIcon />
                         </Grid>
