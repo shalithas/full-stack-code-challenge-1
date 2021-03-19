@@ -3,5 +3,38 @@
 .App {
   &__main {
     padding: $bpk-spacing-sm;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .fs-12{
+    font-size: 12px;
+  }
+  .text-gray{
+    color: #817B8F;
+  }
+  .text-light-green{
+    color: #00A698;
+  }
+  .text-light-red{
+    color: #DC6F81;
+  }
+  .fs-24{
+    font-size: 24px;
+  }
+  .fs-14{
+    font-size: 14px;
+  }
+  .green-button{
+    font-weight: bold ;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+    background-color: #00A698;
+    border-color: #00A698;
+  }
+  .green-button:hover{
+    background-color: #00746A;
+    border-color: #00746A;
   }
 }

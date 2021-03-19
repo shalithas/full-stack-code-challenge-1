@@ -1,6 +1,7 @@
-import React from 'react';
-import BpkText from 'bpk-component-text';
-
+import React, { useState, useEffect } from 'react';
+import { Card, Button } from 'react-bootstrap';
+import { getItineraries, getLegs } from "../../services/APIServices";
+import AirLines from "../AirLines/AirLines";
 import Header from '../Header';
 
 import STYLES from './App.scss';

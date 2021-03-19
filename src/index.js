@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom';
 
 import App from './components/App';
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 ReactDOM.render(React.createElement(App), document.getElementById('root'));
 
 /* Create functionality in a sensible file to do the following:
