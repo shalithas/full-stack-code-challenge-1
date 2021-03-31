@@ -4,17 +4,18 @@ import BpkText from 'bpk-component-text';
 import Header from '../Header';
 
 import STYLES from './App.scss';
+import Itineraries from "../Itineraries";
 
 const getClassName = (className) => STYLES[className] || 'UNKNOWN';
 
-const App = () => (
-  <div className={getClassName('App')}>
-    <Header />
+const App = () => {
+  return (<div className={getClassName('App')}>
+    <Header/>
     <main className={getClassName('App__main')}>
-      <BpkText tagName="p">Over to you...</BpkText>
+      <Itineraries />
       {/* TODO: Add a component to display results here */}
     </main>
-  </div>
-);
+  </div>)
+};
 
 export default App;

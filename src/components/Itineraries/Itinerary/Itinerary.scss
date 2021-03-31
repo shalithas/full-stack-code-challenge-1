@@ -1,0 +1,58 @@
+@import '~bpk-mixins';
+$grey: #817b8f;
+$verticalSpacing: 5px;
+
+.Itinerary {
+  border: 1px solid rgba($grey,.3);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba($grey,.25);
+
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .flight_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .agent_details {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .agent_price {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: $verticalSpacing;
+
+      .price {
+        font-size: 1.4em;
+        font-weight: bold;
+      }
+      .agent {
+        color: $grey;
+        text-transform: lowercase;
+      }
+    }
+
+    .select_btn {
+      background: #00a698;
+      border: none;
+      border-radius: 5px;
+      text-transform: capitalize;
+      color: #ffffff;
+
+      padding: 10px 20px;
+    }
+  }
+}

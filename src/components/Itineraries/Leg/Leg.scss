@@ -1,0 +1,69 @@
+@import '~bpk-mixins';
+
+$grey: #817b8f;
+$direct: #27b4a8;
+$stops: #d75a6f;
+
+$verticalSpacing: 5px;
+
+.Leg {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .arrival_departure {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .airport {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: $verticalSpacing;
+
+    span {
+      display: block;
+      text-transform: uppercase;
+      color: $grey;
+
+      &.time {
+        color: #000000;
+      }
+    }
+  }
+
+  .other_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: $verticalSpacing;
+
+    font-size: .9em;
+
+    .duration {
+      color: $grey;
+    }
+
+    .stops{
+      color: $stops;
+      text-transform: capitalize;
+    }
+
+    .direct {
+      color: $direct;
+      text-transform: capitalize;
+    }
+  }
+}
